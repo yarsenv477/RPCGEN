@@ -18,7 +18,7 @@ chercher_1_svc(Chaine *argp, struct svc_req *rqstp)
     FILE *fp;
     char buff[255];
 	
-    fp = fopen("/tmp/file.txt", "r");
+    fp = fopen("/tmp/file.txt", "r"); // technically this is wrong because the file must be included in the structure that would be sent to the server machine
     if(fp == NULL){
         perror("file errpr");
         exit(-1);
