@@ -28,7 +28,7 @@ chercher_1_svc(Chaine *argp, struct svc_req *rqstp)
     while(fgets(buff, 255, (FILE*)fp) != NULL) {
         line = strlent(buff);   /* the sie of buff   */
         buff[line-1] = '\0' ; /* the end of the line   */
-        if(strcmp(argp->car, buff) == 0) {
+        if(strcmp(argp->car, buff) == 0) { // maybe you need to use strstr() here , its better.
             result = index;
             fclose(fp);
             return(&result);
